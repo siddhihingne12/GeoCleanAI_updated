@@ -1,0 +1,47 @@
+[
+  {
+    "image_id": "2662777604092543",
+    "finding": "no_clear_target",
+    "note": "Tree-lined institutional frontage and roadway show no roadside dump or overflowing bin."
+  },
+  {
+    "image_id": "2202101550322296",
+    "finding": "unusable_occlusion",
+    "note": "A nearby motorcycle rider blocks most of the centre and right side of the frame."
+  },
+  {
+    "image_id": "902055392582010",
+    "finding": "no_clear_target",
+    "note": "Bank frontage and sidewalk show only a few loose leaves and scraps, with no target accumulation."
+  },
+  {
+    "image_id": "1234422361453203",
+    "finding": "no_clear_target",
+    "note": "Hospital frontage and sidewalk are clear of any roadside dump or overflowing bin."
+  },
+  {
+    "image_id": "1289592566315539",
+    "finding": "unusable_occlusion",
+    "note": "Two nearby riders fill most of the foreground and prevent a reliable roadside assessment."
+  },
+  {
+    "image_id": "666601793179767",
+    "finding": "limited_visibility",
+    "note": "A close car blocks much of the lower frame; no target is visible in the remaining commercial frontage."
+  },
+  {
+    "image_id": "884746484372524",
+    "finding": "no_clear_target",
+    "note": "Petrol-station entrance and shaded sidewalk show no roadside dump or overflowing bin."
+  },
+  {
+    "image_id": "1347361014075762",
+    "finding": "hard_negative_candidate",
+    "note": "Adjacent frames show the sacks, cardboard, and tarps stacked above and behind the auto-parts shop as stored material, rather than a roadside dump."
+  },
+  {
+    "image_id": "1235374992082859",
+    "finding": "no_clear_target",
+    "note": "Median and sidewalk show no roadside dump or overflowing bin."
+  }
+]

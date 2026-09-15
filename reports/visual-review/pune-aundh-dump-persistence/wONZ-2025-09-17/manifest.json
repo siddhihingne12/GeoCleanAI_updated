@@ -1,0 +1,21 @@
+[
+    {
+        "image_id":  "652630700876664",
+        "sequence_id":  "wONZzVCUpP3yQXe4jJ2D5W",
+        "camera_type":  "spherical",
+        "captured_at":  "2025-09-17T06:07:28.8200000+00:00",
+        "coordinates":  [
+                            73.811468736382,
+                            18.56750263618
+                        ],
+        "file":  "652630700876664.jpg",
+        "status":  "downloaded",
+        "creator":  {
+                        "username":  "skysign",
+                        "id":  "3569931696486659"
+                    },
+        "mapillary_url":  "https://www.mapillary.com/app/?pKey=652630700876664",
+        "original_width":  5760,
+        "original_height":  2880
+    }
+]

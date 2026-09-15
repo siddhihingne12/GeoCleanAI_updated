@@ -1,0 +1,44 @@
+{
+    "study":  "Pune Shivajinagar - Emerson Tower screening, round 7",
+    "note":  "Exploratory rectangle around Emerson Tower in the Matrix complex, Patil Estate public lanes, Old Mumbai-Pune Road and Shivajinagar railway approaches. Not an approved corridor. Historical configurations remain in timestamped coverage folders.",
+    "candidates":  [
+                       {
+                           "name":  "pune_shivajinagar_emerson",
+                           "label":  "Shivajinagar - Emerson Tower and Patil Estate",
+                           "bbox":  [
+                                        73.848,
+                                        18.529,
+                                        73.858,
+                                        18.538
+                                    ],
+                           "anchors":  [
+                                           {
+                                               "name":  "Emerson Export Engineering Center mapped point",
+                                               "latitude":  18.533476,
+                                               "longitude":  73.8533461,
+                                               "source":  "https://elevation.maplogs.com/poi/emerson_export_engineering_center_emerson_tower_matrix_complex_old_mumbai_pune_hwy_beside_shopper_s_stop_wakadewadi_shivajinagar_pune_maharashtra_india.493039.html"
+                                           },
+                                           {
+                                               "name":  "Emerson at Matrix Tower address listing",
+                                               "source":  "https://www.bharatibiz.com/en/emerson-export-engineering-centre_3M-020-3026-7000"
+                                           },
+                                           {
+                                               "name":  "Patil Estate Lane 10 mapped point",
+                                               "latitude":  18.5325993,
+                                               "longitude":  73.8542802,
+                                               "source":  "https://www.geocords.com/place/shop-no1-lane-no10-patil-estate-shivajinagar-pune-maharashtra-411005-india-11871/"
+                                           },
+                                           {
+                                               "name":  "Shivajinagar railway station mapped point",
+                                               "latitude":  18.5327,
+                                               "longitude":  73.84949,
+                                               "source":  "https://mapcarta.com/W243952358"
+                                           },
+                                           {
+                                               "name":  "COEP official address",
+                                               "source":  "https://www.coeptech.ac.in/about-us/"
+                                           }
+                                       ]
+                       }
+                   ]
+}

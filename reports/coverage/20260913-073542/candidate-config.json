@@ -1,0 +1,31 @@
+{
+    "study":  "Pune Poona Hospital bridge screening, round 3",
+    "note":  "Exploratory rectangle around Yashwantrao Chavan Bridge, its Karve Road and Shastri Road approaches, and Poona Hospital. Not an approved corridor. Previous configurations remain in timestamped coverage folders.",
+    "candidates":  [
+                       {
+                           "name":  "pune_poona_hospital_bridge",
+                           "label":  "Poona Hospital - Yashwantrao Chavan Two-Wheeler Bridge",
+                           "bbox":  [
+                                        73.838,
+                                        18.508,
+                                        73.846,
+                                        18.516
+                                    ],
+                           "anchors":  [
+                                           {
+                                               "name":  "Yashwantrao Chavan Bridge hospital-side end, geotagged photograph",
+                                               "latitude":  18.511163,
+                                               "longitude":  73.842035,
+                                               "source":  "https://commons.wikimedia.org/wiki/File:View_of_Yashwantrao_Chavan_Bridge_from_one_end_near_Poona_Hospital.jpg"
+                                           },
+                                           {
+                                               "name":  "Poona Hospital and Research Centre",
+                                               "latitude":  18.5106347,
+                                               "longitude":  73.8419468,
+                                               "source":  "https://www.latlong.net/poi/poona-hospital-and-research-centre-366707"
+                                           }
+                                       ],
+                           "identity_source":  "https://www.punekarnews.in/pune-entry-of-vehicles-restricted-on-two-wheeler-bridge-connecting-karve-road-to-poona-hospital/"
+                       }
+                   ]
+}

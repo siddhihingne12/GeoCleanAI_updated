@@ -1,0 +1,40 @@
+{
+    "study":  "Pune Kondhwa - NIBM corridor screening, round 6",
+    "note":  "Exploratory rectangle covering a compact section of NIBM Road, Kondhwa Khurd and public-road approaches to the National Institute of Bank Management. Not an approved corridor. Historical configurations remain in timestamped coverage folders.",
+    "candidates":  [
+                       {
+                           "name":  "pune_kondhwa_nibm",
+                           "label":  "Kondhwa - NIBM Road corridor",
+                           "bbox":  [
+                                        73.887,
+                                        18.472,
+                                        73.902,
+                                        18.48
+                                    ],
+                           "anchors":  [
+                                           {
+                                               "name":  "Kondhwa mapped point",
+                                               "latitude":  18.477091,
+                                               "longitude":  73.890686,
+                                               "source":  "https://www.latlong.net/place/kondhwa-pune-maharashtra-india-18204.html"
+                                           },
+                                           {
+                                               "name":  "NIBM Road mapped point",
+                                               "latitude":  18.4777776,
+                                               "longitude":  73.8931128,
+                                               "source":  "https://www.coordinatesfinder.com/coordinates/576639-nibm-road-pune"
+                                           },
+                                           {
+                                               "name":  "National Institute of Bank Management mapped campus",
+                                               "latitude":  18.47533,
+                                               "longitude":  73.89972,
+                                               "source":  "https://mapcarta.com/34491220"
+                                           },
+                                           {
+                                               "name":  "National Institute of Bank Management official address",
+                                               "source":  "https://www.nibmindia.org/ContactUS/"
+                                           }
+                                       ]
+                       }
+                   ]
+}

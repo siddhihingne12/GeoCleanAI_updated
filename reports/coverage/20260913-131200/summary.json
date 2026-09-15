@@ -1,0 +1,128 @@
+{
+    "candidates":  [
+                       {
+                           "name":  "pune_aundh",
+                           "label":  "Aundh - Parihar Chowk, Bremen Chowk and Gaon approaches",
+                           "bbox":  [
+                                        73.804,
+                                        18.557,
+                                        73.817,
+                                        18.569
+                                    ],
+                           "unique_images":  3220,
+                           "recent_images":  739,
+                           "metadata_eligible_recent":  739,
+                           "spaced_recent_images":  474,
+                           "spaced_recent_sequences":  14,
+                           "distinct_sites":  9,
+                           "site_breakdown":  [
+                                                  {
+                                                      "frames":  111,
+                                                      "latitude":  18.56668,
+                                                      "sequence_ids":  1,
+                                                      "longitude":  73.81346
+                                                  },
+                                                  {
+                                                      "frames":  87,
+                                                      "latitude":  18.56771,
+                                                      "sequence_ids":  2,
+                                                      "longitude":  73.81159
+                                                  },
+                                                  {
+                                                      "frames":  81,
+                                                      "latitude":  18.56047,
+                                                      "sequence_ids":  1,
+                                                      "longitude":  73.8075
+                                                  },
+                                                  {
+                                                      "frames":  76,
+                                                      "latitude":  18.56663,
+                                                      "sequence_ids":  1,
+                                                      "longitude":  73.81199
+                                                  },
+                                                  {
+                                                      "frames":  61,
+                                                      "latitude":  18.56733,
+                                                      "sequence_ids":  1,
+                                                      "longitude":  73.81163
+                                                  },
+                                                  {
+                                                      "frames":  32,
+                                                      "latitude":  18.56866,
+                                                      "sequence_ids":  5,
+                                                      "longitude":  73.81136
+                                                  },
+                                                  {
+                                                      "frames":  21,
+                                                      "latitude":  18.56034,
+                                                      "sequence_ids":  1,
+                                                      "longitude":  73.80451
+                                                  },
+                                                  {
+                                                      "frames":  4,
+                                                      "latitude":  18.56043,
+                                                      "sequence_ids":  1,
+                                                      "longitude":  73.80674
+                                                  },
+                                                  {
+                                                      "frames":  1,
+                                                      "latitude":  18.56291,
+                                                      "sequence_ids":  1,
+                                                      "longitude":  73.80742
+                                                  }
+                                              ],
+                           "all_sequences":  26,
+                           "oldest_capture":  "2019-01-24",
+                           "newest_capture":  "2026-05-19",
+                           "camera_types":  [
+                                                {
+                                                    "count":  2612,
+                                                    "type":  "perspective"
+                                                },
+                                                {
+                                                    "count":  214,
+                                                    "type":  "brown"
+                                                },
+                                                {
+                                                    "count":  394,
+                                                    "type":  "spherical"
+                                                }
+                                            ],
+                           "images_with_camera_parameters":  2826,
+                           "images_with_compass":  3220,
+                           "images_with_corrected_position":  3120,
+                           "successful_pages":  42,
+                           "complete":  true,
+                           "problems":  [
+
+                                        ],
+                           "metadata_gate":  true,
+                           "metadata_gate_note":  "Sequence-ID count is reported for reference only; the gate uses distinct_sites.",
+                           "visual_quality_and_waste_presence":  "Not inspected; metadata alone cannot establish usable training data.",
+                           "capture_years":  [
+                                                 {
+                                                     "count":  2481,
+                                                     "year":  "2019"
+                                                 },
+                                                 {
+                                                     "count":  702,
+                                                     "year":  "2025"
+                                                 },
+                                                 {
+                                                     "count":  37,
+                                                     "year":  "2026"
+                                                 }
+                                             ],
+                           "sample_image_links":  [
+                                                      "https://www.mapillary.com/app/?pKey=1363123435657244",
+                                                      "https://www.mapillary.com/app/?pKey=1628607624863227",
+                                                      "https://www.mapillary.com/app/?pKey=2317370689071360",
+                                                      "https://www.mapillary.com/app/?pKey=1694373855316318",
+                                                      "https://www.mapillary.com/app/?pKey=1655630392408371"
+                                                  ]
+                       }
+                   ],
+    "recent_cutoff":  "2024-09-13",
+    "checked_at":  "2026-09-13T13:12:00.6904323+00:00",
+    "study":  "Pune Aundh parallel screening, round 8"
+}

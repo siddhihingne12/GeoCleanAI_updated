@@ -1,0 +1,34 @@
+{
+    "study":  "Pune Dhole Patil Road screening, round 5",
+    "note":  "Exploratory rectangle around Dhole Patil Road, Ruby Hall Clinic and nearby public-road edges. Not an approved corridor. Historical configurations remain in timestamped coverage folders.",
+    "candidates":  [
+                       {
+                           "name":  "pune_dhole_patil_road",
+                           "label":  "Dhole Patil Road - Ruby Hall vicinity",
+                           "bbox":  [
+                                        73.871,
+                                        18.531,
+                                        73.881,
+                                        18.539
+                                    ],
+                           "anchors":  [
+                                           {
+                                               "name":  "Dhole Patil Road mapped point",
+                                               "latitude":  18.534989,
+                                               "longitude":  73.87618,
+                                               "source":  "https://www.findlatitudeandlongitude.com/l/Dhole%2BPatil%2BRoad%2C%2BPune%2B-%2B411001%2C%2B/3666551/"
+                                           },
+                                           {
+                                               "name":  "Ruby Hall Clinic Sassoon Road",
+                                               "latitude":  18.5335374,
+                                               "longitude":  73.8771538,
+                                               "source":  "https://www.latlong.net/poi/ruby-hall-clinic-398833"
+                                           },
+                                           {
+                                               "name":  "Ruby Hall Clinic official address",
+                                               "source":  "https://rubyhall.com/contact-us/"
+                                           }
+                                       ]
+                       }
+                   ]
+}

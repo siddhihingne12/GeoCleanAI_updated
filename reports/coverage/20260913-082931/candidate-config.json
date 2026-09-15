@@ -1,0 +1,30 @@
+{
+    "study":  "Pune Hadapsar market-edge screening, round 4",
+    "note":  "Exploratory rectangle around Mantri Market Road and Gadital public-road approaches. Not all Hadapsar and not an approved corridor. Historical configurations remain in coverage folders.",
+    "candidates":  [
+                       {
+                           "name":  "pune_hadapsar_market",
+                           "label":  "Hadapsar Mantri Market - Gadital",
+                           "bbox":  [
+                                        73.931,
+                                        18.497,
+                                        73.943,
+                                        18.505
+                                    ],
+                           "anchors":  [
+                                           {
+                                               "name":  "Mantri Market Road",
+                                               "latitude":  18.5009,
+                                               "longitude":  73.9347,
+                                               "source":  "https://www.pataitihaas.com/mantri-market-rd-hadapsar-gaon-hadapsar-pune-maharashtra-411028-india"
+                                           },
+                                           {
+                                               "name":  "Hadapsar Gadital PMPML Bus Stand",
+                                               "latitude":  18.5002932,
+                                               "longitude":  73.9392,
+                                               "source":  "https://www.latlong.net/poi/hadapsar-gadital-pmpml-bus-stand-473347"
+                                           }
+                                       ]
+                       }
+                   ]
+}

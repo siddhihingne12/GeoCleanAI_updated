@@ -1,0 +1,34 @@
+{
+    "study":  "Pune remaining-area parallel screening - Fursungi and Uruli Devachi",
+    "note":  "Queue entry 10 interpreted as the Uruli Devachi/Phursungi waste-depot locality from the supplied waste-site lead, supported by CPCB committee report. Exploratory public-road surroundings; landfill interiors excluded from target labels.",
+    "candidates":  [
+                       {
+                           "name":  "pune_fursungi_uruli",
+                           "label":  "Fursungi - Uruli Devachi depot surroundings",
+                           "bbox":  [
+                                        73.944,
+                                        18.454,
+                                        73.964,
+                                        18.474
+                                    ],
+                           "anchors":  [
+                                           {
+                                               "name":  "Published dumping-yard centre (DMS converted to decimal; approximate location anchor only)",
+                                               "latitude":  18.47111111111111,
+                                               "longitude":  73.95361111111112,
+                                               "source":  "https://www.researchgate.net/publication/360882884_Groundwater_quality_assessment_in_proximity_to_solid_waste_dumpsite_at_Uruli_Devachi_in_Pune_Maharashtra"
+                                           },
+                                           {
+                                               "name":  "Uruli Devachi locality",
+                                               "latitude":  18.45584,
+                                               "longitude":  73.95645,
+                                               "source":  "https://mapcarta.com/29229622"
+                                           },
+                                           {
+                                               "name":  "CPCB committee report identifies Devachi Urali and Phursungi waste-depot survey plots",
+                                               "source":  "https://www.greentribunal.gov.in/sites/default/files/news_updates/Committee%20Report%20filed%20by%20CPCB%20in%20EA.No_.%2002-2021%20%28page%20nos.%2069-108%29.pdf"
+                                           }
+                                       ]
+                       }
+                   ]
+}

@@ -1,0 +1,146 @@
+[
+    {
+        "id":  "1750878528937567",
+        "captured_at":  1758088895786,
+        "compass_angle":  178.96557057054,
+        "geometry":  {
+                         "type":  "Point",
+                         "coordinates":  [
+                                             73.811580522473,
+                                             18.56770557015
+                                         ]
+                     },
+        "camera_type":  "spherical",
+        "width":  5760,
+        "height":  2880,
+        "sequence":  "BEohfHsAZiWFlVXwp7Gz4N"
+    },
+    {
+        "id":  "4192131444349692",
+        "captured_at":  1758088896053,
+        "compass_angle":  178.96557057054,
+        "geometry":  {
+                         "type":  "Point",
+                         "coordinates":  [
+                                             73.81158105634,
+                                             18.56767754215
+                                         ]
+                     },
+        "camera_type":  "spherical",
+        "width":  5760,
+        "height":  2880,
+        "sequence":  "BEohfHsAZiWFlVXwp7Gz4N"
+    },
+    {
+        "id":  "1337054387997608",
+        "captured_at":  1758088896320,
+        "compass_angle":  178.96557057054,
+        "geometry":  {
+                         "type":  "Point",
+                         "coordinates":  [
+                                             73.811581590207,
+                                             18.56764951415
+                                         ]
+                     },
+        "camera_type":  "spherical",
+        "width":  5760,
+        "height":  2880,
+        "sequence":  "BEohfHsAZiWFlVXwp7Gz4N"
+    },
+    {
+        "id":  "1115129423624206",
+        "captured_at":  1758088896586,
+        "compass_angle":  180,
+        "geometry":  {
+                         "type":  "Point",
+                         "coordinates":  [
+                                             73.811582,
+                                             18.567621597418
+                                         ]
+                     },
+        "camera_type":  "spherical",
+        "width":  5760,
+        "height":  2880,
+        "sequence":  "BEohfHsAZiWFlVXwp7Gz4N"
+    },
+    {
+        "id":  "765068579834233",
+        "captured_at":  1758088896853,
+        "compass_angle":  180,
+        "geometry":  {
+                         "type":  "Point",
+                         "coordinates":  [
+                                             73.811582,
+                                             18.567594048186
+                                         ]
+                     },
+        "camera_type":  "spherical",
+        "width":  5760,
+        "height":  2880,
+        "sequence":  "BEohfHsAZiWFlVXwp7Gz4N"
+    },
+    {
+        "id":  "819887710465773",
+        "captured_at":  1758088897120,
+        "compass_angle":  180,
+        "geometry":  {
+                         "type":  "Point",
+                         "coordinates":  [
+                                             73.811582,
+                                             18.567566498955
+                                         ]
+                     },
+        "camera_type":  "spherical",
+        "width":  5760,
+        "height":  2880,
+        "sequence":  "BEohfHsAZiWFlVXwp7Gz4N"
+    },
+    {
+        "id":  "2406247403123891",
+        "captured_at":  1758088897387,
+        "compass_angle":  180,
+        "geometry":  {
+                         "type":  "Point",
+                         "coordinates":  [
+                                             73.811582,
+                                             18.567538949723
+                                         ]
+                     },
+        "camera_type":  "spherical",
+        "width":  5760,
+        "height":  2880,
+        "sequence":  "BEohfHsAZiWFlVXwp7Gz4N"
+    },
+    {
+        "id":  "1921054925349204",
+        "captured_at":  1758088897688,
+        "compass_angle":  178.24849711806,
+        "geometry":  {
+                         "type":  "Point",
+                         "coordinates":  [
+                                             73.81158249541,
+                                             18.56750964229
+                                         ]
+                     },
+        "camera_type":  "spherical",
+        "width":  5760,
+        "height":  2880,
+        "sequence":  "BEohfHsAZiWFlVXwp7Gz4N"
+    },
+    {
+        "id":  "24511646765122743",
+        "captured_at":  1758088897988,
+        "compass_angle":  178.24849711806,
+        "geometry":  {
+                         "type":  "Point",
+                         "coordinates":  [
+                                             73.81158339631,
+                                             18.56748171439
+                                         ]
+                     },
+        "camera_type":  "spherical",
+        "width":  5760,
+        "height":  2880,
+        "sequence":  "BEohfHsAZiWFlVXwp7Gz4N"
+    }
+]

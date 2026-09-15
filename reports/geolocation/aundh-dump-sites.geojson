@@ -1,0 +1,134 @@
+{
+  "type": "FeatureCollection",
+  "features": [
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          73.8116811,
+          18.5675349
+        ]
+      },
+      "properties": {
+        "class": "roadside_dump",
+        "view_count": 4,
+        "method": "intersection",
+        "confidence": 1.0,
+        "first_seen": "2025-09-17T06:01:36.320Z",
+        "last_seen": "2025-09-17T06:01:37.988Z",
+        "intersection_spread_m": 5.13,
+        "mean_range_m": 12.79,
+        "image_ids": [
+          "1337054387997608",
+          "765068579834233",
+          "2406247403123891",
+          "24511646765122743"
+        ],
+        "detection_ids": [
+          "F3",
+          "F5",
+          "F7",
+          "F9"
+        ],
+        "sequence_ids": [
+          "BEohfHsAZiWFlVXwp7Gz4N"
+        ],
+        "bearings_deg": [
+          135.19,
+          123.91,
+          93.17,
+          42.2
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "LineString",
+        "coordinates": [
+          [
+            73.811581590207,
+            18.56764951415
+          ],
+          [
+            73.8118505,
+            18.5673948
+          ]
+        ]
+      },
+      "properties": {
+        "kind": "ray",
+        "image_id": "1337054387997608",
+        "class": "roadside_dump",
+        "bearing_deg": 135.19
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "LineString",
+        "coordinates": [
+          [
+            73.811582,
+            18.567594048186
+          ],
+          [
+            73.8118979,
+            18.5673944
+          ]
+        ]
+      },
+      "properties": {
+        "kind": "ray",
+        "image_id": "765068579834233",
+        "class": "roadside_dump",
+        "bearing_deg": 123.91
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "LineString",
+        "coordinates": [
+          [
+            73.811582,
+            18.567538949723
+          ],
+          [
+            73.8119606,
+            18.5675214
+          ]
+        ]
+      },
+      "properties": {
+        "kind": "ray",
+        "image_id": "2406247403123891",
+        "class": "roadside_dump",
+        "bearing_deg": 93.17
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "LineString",
+        "coordinates": [
+          [
+            73.81158339631,
+            18.56748171439
+          ],
+          [
+            73.8118361,
+            18.5677511
+          ]
+        ]
+      },
+      "properties": {
+        "kind": "ray",
+        "image_id": "24511646765122743",
+        "class": "roadside_dump",
+        "bearing_deg": 42.2
+      }
+    }
+  ]
+}

@@ -1,0 +1,170 @@
+[
+    {
+        "name":  "garbage_can_overflow",
+        "workspace":  "mariswary-deepak-4ajr0",
+        "project":  "garbage-can-overflow",
+        "url":  "https://universe.roboflow.com/mariswary-deepak-4ajr0/garbage-can-overflow",
+        "candidate_class":  "overflowing_bin",
+        "listed_licence":  "CC BY 4.0 (search listing only; page unverified)",
+        "api_licence_fields":  "license=CC BY 4.0",
+        "type":  "object-detection",
+        "annotation":  "fire",
+        "images":  1974,
+        "unannotated":  0,
+        "classes":  [
+                        {
+                            "name":  "Trash flow",
+                            "count":  620
+                        },
+                        {
+                            "name":  "Healthy trash can",
+                            "count":  602
+                        },
+                        {
+                            "name":  "Close_empty",
+                            "count":  560
+                        },
+                        {
+                            "name":  "Open_empty",
+                            "count":  532
+                        },
+                        {
+                            "name":  "Open_full",
+                            "count":  508
+                        },
+                        {
+                            "name":  "Broken trash can",
+                            "count":  351
+                        },
+                        {
+                            "name":  "Close_full",
+                            "count":  273
+                        },
+                        {
+                            "name":  "full",
+                            "count":  193
+                        },
+                        {
+                            "name":  "closed",
+                            "count":  50
+                        },
+                        {
+                            "name":  "empty",
+                            "count":  37
+                        }
+                    ],
+        "versions":  [
+                         {
+                             "version":  1,
+                             "images":  1974,
+                             "splits":  {
+                                            "valid":  253,
+                                            "test":  536,
+                                            "train":  1185
+                                        },
+                             "created":  1678192359.281,
+                             "exports":  [
+                                             "coco",
+                                             "tensorflow",
+                                             "tfrecord",
+                                             "yolov11",
+                                             "yolov12",
+                                             "yolov5pytorch",
+                                             "yolov8",
+                                             "yolov8-obb"
+                                         ]
+                         },
+                         {
+                             "version":  2,
+                             "images":  1974,
+                             "splits":  {
+                                            "valid":  253,
+                                            "test":  536,
+                                            "train":  1185
+                                        },
+                             "created":  1678193644.64,
+                             "exports":  [
+                                             "tensorflow",
+                                             "yolov11",
+                                             "yolov5pytorch",
+                                             "yolov8"
+                                         ]
+                         },
+                         {
+                             "version":  3,
+                             "images":  1974,
+                             "splits":  {
+                                            "valid":  253,
+                                            "test":  536,
+                                            "train":  1185
+                                        },
+                             "created":  1678200982.312,
+                             "exports":  [
+                                             "voc",
+                                             "yolov11",
+                                             "yolov5pytorch",
+                                             "yolov7pytorch",
+                                             "yolov8",
+                                             "yolov9"
+                                         ]
+                         },
+                         {
+                             "version":  4,
+                             "images":  1974,
+                             "splits":  {
+                                            "test":  2,
+                                            "valid":  11,
+                                            "train":  1961
+                                        },
+                             "created":  1678211781.515,
+                             "exports":  [
+                                             "coco",
+                                             "coco-mmdetection",
+                                             "multiclass",
+                                             "openai",
+                                             "tensorflow",
+                                             "tfrecord",
+                                             "voc",
+                                             "yolo26",
+                                             "yolov11",
+                                             "yolov12",
+                                             "yolov4pytorch",
+                                             "yolov5pytorch",
+                                             "yolov8",
+                                             "yolov8-obb",
+                                             "yolov9"
+                                         ]
+                         }
+                     ],
+        "checked_at":  "2026-09-13T15:06:19.5082775+00:00",
+        "download":  {
+                         "version":  4,
+                         "format":  "yolov8",
+                         "zip":  "data/public/roboflow/garbage_can_overflow/v4-yolov8.zip",
+                         "zip_bytes":  112956346,
+                         "folder":  "data/public/roboflow/garbage_can_overflow/v4-yolov8",
+                         "splits":  [
+                                        {
+                                            "split":  "test",
+                                            "images":  2,
+                                            "labels":  2
+                                        },
+                                        {
+                                            "split":  "train",
+                                            "images":  1961,
+                                            "labels":  1961
+                                        },
+                                        {
+                                            "split":  "valid",
+                                            "images":  11,
+                                            "labels":  11
+                                        }
+                                    ],
+                         "has_data_yaml":  true,
+                         "long_filenames_shortened":  202,
+                         "readme_licence_lines":  [
+                                                      "License: CC BY 4.0"
+                                                  ]
+                     }
+    }
+]

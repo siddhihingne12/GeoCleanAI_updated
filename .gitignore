@@ -1,0 +1,11 @@
+.env
+.env.*
+!.env.example
+__pycache__/
+.venv/
+token.txt
+data/
+**/.env
+*.pem
+*.key
+.claude/settings.local.json

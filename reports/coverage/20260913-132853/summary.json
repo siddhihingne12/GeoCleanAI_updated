@@ -1,0 +1,59 @@
+{
+    "candidates":  [
+                       {
+                           "name":  "pune_fursungi_uruli",
+                           "label":  "Fursungi - Uruli Devachi depot surroundings",
+                           "bbox":  [
+                                        73.944,
+                                        18.454,
+                                        73.964,
+                                        18.474
+                                    ],
+                           "unique_images":  269,
+                           "recent_images":  0,
+                           "metadata_eligible_recent":  0,
+                           "spaced_recent_images":  0,
+                           "spaced_recent_sequences":  0,
+                           "distinct_sites":  0,
+                           "site_breakdown":  [
+
+                                              ],
+                           "all_sequences":  3,
+                           "oldest_capture":  "2020-12-26",
+                           "newest_capture":  "2020-12-26",
+                           "camera_types":  [
+                                                {
+                                                    "count":  269,
+                                                    "type":  "perspective"
+                                                }
+                                            ],
+                           "images_with_camera_parameters":  269,
+                           "images_with_compass":  269,
+                           "images_with_corrected_position":  269,
+                           "successful_pages":  100,
+                           "complete":  true,
+                           "problems":  [
+
+                                        ],
+                           "metadata_gate":  false,
+                           "metadata_gate_note":  "Sequence-ID count is reported for reference only; the gate uses distinct_sites.",
+                           "visual_quality_and_waste_presence":  "Not inspected; metadata alone cannot establish usable training data.",
+                           "capture_years":  [
+                                                 {
+                                                     "count":  269,
+                                                     "year":  "2020"
+                                                 }
+                                             ],
+                           "sample_image_links":  [
+                                                      "https://www.mapillary.com/app/?pKey=824182564888510",
+                                                      "https://www.mapillary.com/app/?pKey=758399958209998",
+                                                      "https://www.mapillary.com/app/?pKey=477161710160721",
+                                                      "https://www.mapillary.com/app/?pKey=311880203835847",
+                                                      "https://www.mapillary.com/app/?pKey=2779779992283887"
+                                                  ]
+                       }
+                   ],
+    "recent_cutoff":  "2024-09-13",
+    "checked_at":  "2026-09-13T13:28:53.6534407+00:00",
+    "study":  "Pune remaining-area parallel screening - Fursungi and Uruli Devachi"
+}

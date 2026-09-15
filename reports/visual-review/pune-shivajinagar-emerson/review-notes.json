@@ -1,0 +1,167 @@
+[
+  {
+    "image_id": "1409922300249913",
+    "finding": "limited_visibility",
+    "note": "Traffic and parked vehicles cover most road edges; no target is visible in the remaining corridor view."
+  },
+  {
+    "image_id": "1238724118238842",
+    "finding": "limited_visibility",
+    "note": "Cars and a small truck block much of both roadside edges near the flyover."
+  },
+  {
+    "image_id": "2115676052539620",
+    "finding": "limited_visibility",
+    "note": "Dense traffic and large vehicles obscure the lane edges and adjacent settlement frontage."
+  },
+  {
+    "image_id": "622886663856939",
+    "finding": "no_clear_target",
+    "note": "Metro construction and landscaped median show no roadside dump or overflowing bin."
+  },
+  {
+    "image_id": "1365716157951072",
+    "finding": "no_clear_target",
+    "note": "Office frontage and two public litter receptacles show no visible overflow or surrounding accumulation."
+  },
+  {
+    "image_id": "966853395563394",
+    "finding": "limited_visibility",
+    "note": "A close motorcycle rider obscures the lower centre, while the visible hospital frontage shows no target."
+  },
+  {
+    "image_id": "1348939713583121",
+    "finding": "no_clear_target",
+    "note": "Clear metro-corridor view shows no roadside dump or overflowing bin."
+  },
+  {
+    "image_id": "900966035769088",
+    "finding": "uncertain_scattered_litter",
+    "note": "One white sack and sparse loose litter lie under the flyover; the accumulation is below the roadside-dump threshold."
+  },
+  {
+    "image_id": "956083784255819",
+    "finding": "no_clear_target",
+    "note": "Bridge roadway and walkway show only a few tiny scraps, with no concentrated dump or overflowing bin."
+  },
+  {
+    "image_id": "1176949984237067",
+    "finding": "no_clear_target",
+    "note": "Clear flyover approach and pedestrian edge show no roadside dump or overflowing bin."
+  },
+  {
+    "image_id": "2112701469553266",
+    "finding": "no_clear_target",
+    "note": "The visible space beneath the flyover is clear of any target accumulation."
+  },
+  {
+    "image_id": "1386627169861139",
+    "finding": "hard_negative_candidate",
+    "note": "Broken paving tiles line the sidewalk; they appear to be construction or maintenance material rather than household waste."
+  },
+  {
+    "image_id": "2202101550322296",
+    "finding": "unusable_occlusion",
+    "note": "A nearby motorcycle rider blocks most of the centre and right side of the frame."
+  },
+  {
+    "image_id": "1289592566315539",
+    "finding": "unusable_occlusion",
+    "note": "Two nearby riders fill most of the foreground and prevent a reliable roadside assessment."
+  },
+  {
+    "image_id": "1347361014075762",
+    "finding": "hard_negative_candidate",
+    "note": "Adjacent frames show the sacks, cardboard, and tarps stacked above and behind the auto-parts shop as stored material, rather than a roadside dump."
+  },
+  {
+    "image_id": "1288392073348336",
+    "finding": "no_clear_target",
+    "note": "Flyover and construction frontage show no roadside dump or overflowing bin."
+  },
+  {
+    "image_id": "1414600780047952",
+    "finding": "unusable_quality",
+    "note": "Severe motion blur prevents a reliable assessment of the roadside."
+  },
+  {
+    "image_id": "1428872388594012",
+    "finding": "hard_negative_candidate",
+    "note": "Scaffolding, concrete blocks, and rubble beside the flyover are identifiable as construction material."
+  },
+  {
+    "image_id": "2166936417379797",
+    "finding": "limited_visibility",
+    "note": "A box truck and traffic block much of the centre and right roadside."
+  },
+  {
+    "image_id": "1612874049838137",
+    "finding": "no_clear_target",
+    "note": "Clear metro-corridor view shows no roadside dump or overflowing bin."
+  },
+  {
+    "image_id": "2331646620652413",
+    "finding": "limited_visibility",
+    "note": "Dense intersection traffic partly blocks both road edges, with no target visible in the remaining areas."
+  },
+  {
+    "image_id": "910479317708212",
+    "finding": "unusable_occlusion",
+    "note": "A bus and auto-rickshaw fill nearly the entire frame, preventing roadside review."
+  },
+  {
+    "image_id": "1256680342139576",
+    "finding": "no_clear_target",
+    "note": "Hospital frontage and sidewalk are clear of any roadside dump or overflowing bin."
+  },
+  {
+    "image_id": "1732598090867235",
+    "finding": "no_clear_target",
+    "note": "Residential frontage behind the median shows no concentrated waste accumulation."
+  },
+  {
+    "image_id": "2116780612107533",
+    "finding": "no_clear_target",
+    "note": "Visible sidewalk and landscaped frontage show no roadside dump or overflowing bin."
+  },
+  {
+    "image_id": "1816534825790666",
+    "finding": "unusable_occlusion",
+    "note": "A close auto-rickshaw blocks most of the scene and prevents a reliable roadside assessment."
+  },
+  {
+    "image_id": "996505368683272",
+    "finding": "no_clear_target",
+    "note": "Median and walkway show only isolated tiny debris, with no target accumulation."
+  },
+  {
+    "image_id": "1980881659440544",
+    "finding": "no_clear_target",
+    "note": "Roadway, median, and construction frontage show no roadside dump or overflowing bin."
+  },
+  {
+    "image_id": "1665417467778353",
+    "finding": "no_clear_target",
+    "note": "Wall-lined sidewalk and roadway are clear of any target accumulation."
+  },
+  {
+    "image_id": "1998278180750525",
+    "finding": "no_clear_target",
+    "note": "Median wall and sidewalk show no roadside dump or overflowing bin."
+  },
+  {
+    "image_id": "2111998119623736",
+    "finding": "no_clear_target",
+    "note": "Clear divided-road view shows no roadside dump or overflowing bin."
+  },
+  {
+    "image_id": "2081981466067874",
+    "finding": "limited_visibility",
+    "note": "Strong backlight and vehicles obscure parts of the roadway, with no target visible in the remaining areas."
+  },
+  {
+    "image_id": "2152322315172340",
+    "finding": "limited_visibility",
+    "note": "Heavy traffic blocks much of the lane edges near COEP, with no target visible in the remaining view."
+  }
+]

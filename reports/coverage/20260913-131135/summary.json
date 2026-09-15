@@ -1,0 +1,84 @@
+{
+    "candidates":  [
+                       {
+                           "name":  "pune_pashan",
+                           "label":  "Pashan - Sutarwadi Road and village approaches",
+                           "bbox":  [
+                                        73.780,
+                                        18.533,
+                                        73.797,
+                                        18.545
+                                    ],
+                           "unique_images":  2442,
+                           "recent_images":  51,
+                           "metadata_eligible_recent":  51,
+                           "spaced_recent_images":  51,
+                           "spaced_recent_sequences":  1,
+                           "distinct_sites":  1,
+                           "site_breakdown":  [
+                                                  {
+                                                      "frames":  51,
+                                                      "latitude":  18.53674,
+                                                      "sequence_ids":  1,
+                                                      "longitude":  73.78065
+                                                  }
+                                              ],
+                           "all_sequences":  14,
+                           "oldest_capture":  "2017-08-29",
+                           "newest_capture":  "2026-01-12",
+                           "camera_types":  [
+                                                {
+                                                    "count":  2442,
+                                                    "type":  "perspective"
+                                                }
+                                            ],
+                           "images_with_camera_parameters":  2442,
+                           "images_with_compass":  2442,
+                           "images_with_corrected_position":  2442,
+                           "successful_pages":  54,
+                           "complete":  true,
+                           "problems":  [
+
+                                        ],
+                           "metadata_gate":  false,
+                           "metadata_gate_note":  "Sequence-ID count is reported for reference only; the gate uses distinct_sites.",
+                           "visual_quality_and_waste_presence":  "Not inspected; metadata alone cannot establish usable training data.",
+                           "capture_years":  [
+                                                 {
+                                                     "count":  77,
+                                                     "year":  "2017"
+                                                 },
+                                                 {
+                                                     "count":  517,
+                                                     "year":  "2019"
+                                                 },
+                                                 {
+                                                     "count":  434,
+                                                     "year":  "2020"
+                                                 },
+                                                 {
+                                                     "count":  46,
+                                                     "year":  "2022"
+                                                 },
+                                                 {
+                                                     "count":  1317,
+                                                     "year":  "2023"
+                                                 },
+                                                 {
+                                                     "count":  51,
+                                                     "year":  "2026"
+                                                 }
+                                             ],
+                           "sample_image_links":  [
+                                                      "https://www.mapillary.com/app/?pKey=732157159608176",
+                                                      "https://www.mapillary.com/app/?pKey=820073967743166",
+                                                      "https://www.mapillary.com/app/?pKey=1284404047040680",
+                                                      "https://www.mapillary.com/app/?pKey=880021954752886",
+                                                      "https://www.mapillary.com/app/?pKey=770684632728736"
+                                                  ]
+                       }
+                   ],
+    "recent_cutoff":  "2024-09-13",
+    "checked_at":  "2026-09-13T13:11:35.9799734+00:00",
+    "study":  "Pune remaining-area parallel screening - Pashan"
+}

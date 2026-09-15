@@ -1,0 +1,38 @@
+{
+    "name":  "piles_of_garbage",
+    "source_folder":  "C:\\Users\\VINEET\\Documents\\GeoCleanAI-main\\data\\public\\roboflow\\piles_of_garbage\\v1-yolov8",
+    "checked_at":  "2026-09-13T15:09:24.8120647+00:00",
+    "labelled_images":  359,
+    "background_images":  0,
+    "images_by_split":  [
+                            "test:35",
+                            "train:249",
+                            "valid:75"
+                        ],
+    "classes":  [
+                    {
+                        "id":  0,
+                        "name":  "1",
+                        "images":  285,
+                        "boxes":  322,
+                        "median_box_area_fraction":  0.21264648437499997,
+                        "images_by_split":  [
+                                                "test:27",
+                                                "train:199",
+                                                "valid:59"
+                                            ]
+                    },
+                    {
+                        "id":  1,
+                        "name":  "2",
+                        "images":  95,
+                        "boxes":  124,
+                        "median_box_area_fraction":  0.26433105468749996,
+                        "images_by_split":  [
+                                                "test:10",
+                                                "train:67",
+                                                "valid:18"
+                                            ]
+                    }
+                ]
+}

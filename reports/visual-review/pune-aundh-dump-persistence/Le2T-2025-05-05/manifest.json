@@ -1,0 +1,21 @@
+[
+    {
+        "image_id":  "539546609009479",
+        "sequence_id":  "Le2TjoQ1ms3uyCwfYOKGlR",
+        "camera_type":  "perspective",
+        "captured_at":  "2025-05-05T02:37:11.1710000+00:00",
+        "coordinates":  [
+                            73.81165,
+                            18.5675251
+                        ],
+        "file":  "539546609009479.jpg",
+        "status":  "downloaded",
+        "creator":  {
+                        "username":  "patilas",
+                        "id":  "1009813694332695"
+                    },
+        "mapillary_url":  "https://www.mapillary.com/app/?pKey=539546609009479",
+        "original_width":  4096,
+        "original_height":  3072
+    }
+]

@@ -1,0 +1,96 @@
+{
+    "candidates":  [
+                       {
+                           "name":  "pune_kondhwa_nibm",
+                           "label":  "Kondhwa - NIBM Road corridor",
+                           "bbox":  [
+                                        73.887,
+                                        18.472,
+                                        73.902,
+                                        18.48
+                                    ],
+                           "unique_images":  444,
+                           "recent_images":  369,
+                           "metadata_eligible_recent":  369,
+                           "spaced_recent_images":  323,
+                           "spaced_recent_sequences":  9,
+                           "distinct_sites":  5,
+                           "site_breakdown":  [
+                                                  {
+                                                      "frames":  144,
+                                                      "latitude":  18.47615,
+                                                      "sequence_ids":  1,
+                                                      "longitude":  73.89599
+                                                  },
+                                                  {
+                                                      "frames":  105,
+                                                      "latitude":  18.47502,
+                                                      "sequence_ids":  1,
+                                                      "longitude":  73.89775
+                                                  },
+                                                  {
+                                                      "frames":  66,
+                                                      "latitude":  18.47667,
+                                                      "sequence_ids":  1,
+                                                      "longitude":  73.89012
+                                                  },
+                                                  {
+                                                      "frames":  6,
+                                                      "latitude":  18.47731,
+                                                      "sequence_ids":  4,
+                                                      "longitude":  73.89472
+                                                  },
+                                                  {
+                                                      "frames":  2,
+                                                      "latitude":  18.47788,
+                                                      "sequence_ids":  2,
+                                                      "longitude":  73.89066
+                                                  }
+                                              ],
+                           "all_sequences":  11,
+                           "oldest_capture":  "2017-11-19",
+                           "newest_capture":  "2025-12-24",
+                           "camera_types":  [
+                                                {
+                                                    "count":  444,
+                                                    "type":  "perspective"
+                                                }
+                                            ],
+                           "images_with_camera_parameters":  444,
+                           "images_with_compass":  444,
+                           "images_with_corrected_position":  444,
+                           "successful_pages":  32,
+                           "complete":  true,
+                           "problems":  [
+
+                                        ],
+                           "metadata_gate":  true,
+                           "metadata_gate_note":  "Sequence-ID count is reported for reference only; the gate uses distinct_sites.",
+                           "visual_quality_and_waste_presence":  "Not inspected; metadata alone cannot establish usable training data.",
+                           "capture_years":  [
+                                                 {
+                                                     "count":  70,
+                                                     "year":  "2017"
+                                                 },
+                                                 {
+                                                     "count":  140,
+                                                     "year":  "2024"
+                                                 },
+                                                 {
+                                                     "count":  234,
+                                                     "year":  "2025"
+                                                 }
+                                             ],
+                           "sample_image_links":  [
+                                                      "https://www.mapillary.com/app/?pKey=1584798529207806",
+                                                      "https://www.mapillary.com/app/?pKey=1919475622330525",
+                                                      "https://www.mapillary.com/app/?pKey=1250699033781834",
+                                                      "https://www.mapillary.com/app/?pKey=1166635248792198",
+                                                      "https://www.mapillary.com/app/?pKey=1787370021976591"
+                                                  ]
+                       }
+                   ],
+    "recent_cutoff":  "2024-09-13",
+    "checked_at":  "2026-09-13T12:20:01.9282720+00:00",
+    "study":  "Pune Kondhwa - NIBM corridor screening, round 6"
+}

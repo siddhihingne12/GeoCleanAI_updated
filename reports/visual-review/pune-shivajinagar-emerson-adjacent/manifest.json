@@ -1,0 +1,173 @@
+[
+    {
+        "image_id":  "1391554565490383",
+        "sequence_id":  "HiPTLSkfl3vECAnycUp9Nz",
+        "camera_type":  "perspective",
+        "captured_at":  "2026-02-16T03:56:56.0410000+00:00",
+        "coordinates":  [
+                            73.853808270812,
+                            18.531924650691
+                        ],
+        "file":  "1391554565490383.jpg",
+        "status":  "downloaded",
+        "creator":  {
+                        "username":  "Absawant",
+                        "id":  "1390940191591088"
+                    },
+        "mapillary_url":  "https://www.mapillary.com/app/?pKey=1391554565490383",
+        "original_width":  4032,
+        "original_height":  3024
+    },
+    {
+        "image_id":  "2009018553386408",
+        "sequence_id":  "HiPTLSkfl3vECAnycUp9Nz",
+        "camera_type":  "perspective",
+        "captured_at":  "2026-02-16T03:56:57.0500000+00:00",
+        "coordinates":  [
+                            73.853817246021,
+                            18.531957968225
+                        ],
+        "file":  "2009018553386408.jpg",
+        "status":  "downloaded",
+        "creator":  {
+                        "username":  "Absawant",
+                        "id":  "1390940191591088"
+                    },
+        "mapillary_url":  "https://www.mapillary.com/app/?pKey=2009018553386408",
+        "original_width":  4032,
+        "original_height":  3024
+    },
+    {
+        "image_id":  "2232870173789102",
+        "sequence_id":  "HiPTLSkfl3vECAnycUp9Nz",
+        "camera_type":  "perspective",
+        "captured_at":  "2026-02-16T03:56:58.0340000+00:00",
+        "coordinates":  [
+                            73.853822129318,
+                            18.531996378058
+                        ],
+        "file":  "2232870173789102.jpg",
+        "status":  "downloaded",
+        "creator":  {
+                        "username":  "Absawant",
+                        "id":  "1390940191591088"
+                    },
+        "mapillary_url":  "https://www.mapillary.com/app/?pKey=2232870173789102",
+        "original_width":  4032,
+        "original_height":  3024
+    },
+    {
+        "image_id":  "831588926599214",
+        "sequence_id":  "HiPTLSkfl3vECAnycUp9Nz",
+        "camera_type":  "perspective",
+        "captured_at":  "2026-02-16T03:56:59.0430000+00:00",
+        "coordinates":  [
+                            73.853838564306,
+                            18.532021774545
+                        ],
+        "file":  "831588926599214.jpg",
+        "status":  "downloaded",
+        "creator":  {
+                        "username":  "Absawant",
+                        "id":  "1390940191591088"
+                    },
+        "mapillary_url":  "https://www.mapillary.com/app/?pKey=831588926599214",
+        "original_width":  4032,
+        "original_height":  3024
+    },
+    {
+        "image_id":  "1347361014075762",
+        "sequence_id":  "HiPTLSkfl3vECAnycUp9Nz",
+        "camera_type":  "perspective",
+        "captured_at":  "2026-02-16T03:57:00.0360000+00:00",
+        "coordinates":  [
+                            73.85386757015,
+                            18.532061571179
+                        ],
+        "file":  "1347361014075762.jpg",
+        "status":  "downloaded",
+        "creator":  {
+                        "username":  "Absawant",
+                        "id":  "1390940191591088"
+                    },
+        "mapillary_url":  "https://www.mapillary.com/app/?pKey=1347361014075762",
+        "original_width":  4032,
+        "original_height":  3024
+    },
+    {
+        "image_id":  "2128331211348826",
+        "sequence_id":  "HiPTLSkfl3vECAnycUp9Nz",
+        "camera_type":  "perspective",
+        "captured_at":  "2026-02-16T03:57:01.0470000+00:00",
+        "coordinates":  [
+                            73.853903829276,
+                            18.532104847928
+                        ],
+        "file":  "2128331211348826.jpg",
+        "status":  "downloaded",
+        "creator":  {
+                        "username":  "Absawant",
+                        "id":  "1390940191591088"
+                    },
+        "mapillary_url":  "https://www.mapillary.com/app/?pKey=2128331211348826",
+        "original_width":  4032,
+        "original_height":  3024
+    },
+    {
+        "image_id":  "3933043983662016",
+        "sequence_id":  "HiPTLSkfl3vECAnycUp9Nz",
+        "camera_type":  "perspective",
+        "captured_at":  "2026-02-16T03:57:02.0360000+00:00",
+        "coordinates":  [
+                            73.853948285271,
+                            18.532153916111
+                        ],
+        "file":  "3933043983662016.jpg",
+        "status":  "downloaded",
+        "creator":  {
+                        "username":  "Absawant",
+                        "id":  "1390940191591088"
+                    },
+        "mapillary_url":  "https://www.mapillary.com/app/?pKey=3933043983662016",
+        "original_width":  4032,
+        "original_height":  3024
+    },
+    {
+        "image_id":  "1611550636713830",
+        "sequence_id":  "HiPTLSkfl3vECAnycUp9Nz",
+        "camera_type":  "perspective",
+        "captured_at":  "2026-02-16T03:57:03.0370000+00:00",
+        "coordinates":  [
+                            73.854003567291,
+                            18.53220250494
+                        ],
+        "file":  "1611550636713830.jpg",
+        "status":  "downloaded",
+        "creator":  {
+                        "username":  "Absawant",
+                        "id":  "1390940191591088"
+                    },
+        "mapillary_url":  "https://www.mapillary.com/app/?pKey=1611550636713830",
+        "original_width":  4032,
+        "original_height":  3024
+    },
+    {
+        "image_id":  "1221976736760791",
+        "sequence_id":  "HiPTLSkfl3vECAnycUp9Nz",
+        "camera_type":  "perspective",
+        "captured_at":  "2026-02-16T03:57:04.0380000+00:00",
+        "coordinates":  [
+                            73.85407012214,
+                            18.532245118756
+                        ],
+        "file":  "1221976736760791.jpg",
+        "status":  "downloaded",
+        "creator":  {
+                        "username":  "Absawant",
+                        "id":  "1390940191591088"
+                    },
+        "mapillary_url":  "https://www.mapillary.com/app/?pKey=1221976736760791",
+        "original_width":  4032,
+        "original_height":  3024
+    }
+]
