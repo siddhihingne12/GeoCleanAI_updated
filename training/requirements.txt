@@ -1,0 +1,8 @@
+# Install separately in Colab, never in the Vercel function.
+ultralytics==8.4.155
+onnx==1.23.0
+onnxruntime==1.30.0
+PyYAML==6.0.3
+Pillow==12.3.0
+numpy==2.5.3
+pydantic==2.13.5

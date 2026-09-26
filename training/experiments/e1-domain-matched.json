@@ -1,0 +1,26 @@
+{
+  "imgsz": 640,
+  "batch": 16,
+  "batch_fallbacks": [
+    8,
+    4
+  ],
+  "epochs": 50,
+  "patience": 10,
+  "seed": 42,
+  "deterministic": true,
+  "workers": 2,
+  "save_period": 5,
+  "ultralytics_version": "8.4.155",
+  "augment": {
+    "degrees": 0.0,
+    "flipud": 0.0,
+    "perspective": 0.0
+  },
+  "confidence_threshold": 0.35,
+  "name": "e1-domain-matched",
+  "question": "Does TACO made to look like Pune-at-640 (downscaled native crops, realistic degradation, verified negatives) transfer better than the baseline? Data: litter-v2 (640 scale). Epoch cap stays 50 unless baseline logs show it was still improving at epoch 50.",
+  "model": "yolo26n.pt",
+  "data": "litter-v2/dataset.yaml",
+  "version": "pune-litter-e1"
+}

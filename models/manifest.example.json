@@ -1,0 +1,11 @@
+{
+  "version": "pune-litter-v1",
+  "trained": false,
+  "classes": ["litter"],
+  "format": "yolo26-end2end",
+  "input_size": 640,
+  "confidence_threshold": 0.35,
+  "sha256": "GENERATED_BY_TRAINING_EXPORT",
+  "training_dataset": "Reviewed TACO annotations",
+  "evaluation": "Not yet evaluated on Pune images"
+}
