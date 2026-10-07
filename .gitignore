@@ -12,7 +12,11 @@ __pycache__/
 test-results/
 playwright-report/
 artifacts/
-data/
+# data/ is no longer fully ignored - labelling datasets are tracked
+# Ignore only transient local data outputs:
+data/cache/
+data/*.tmp
+
 runs/
 models/*.onnx
 models/*.pt

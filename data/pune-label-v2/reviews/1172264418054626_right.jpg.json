@@ -1,0 +1,16 @@
+{
+  "status": "litter",
+  "boxes": [
+    [
+      0.7094512195121951,
+      0.542530487804878,
+      0.7274390243902439,
+      0.5522865853658536
+    ]
+  ],
+  "reviewer": "Siddhi Hingne",
+  "notes": "paper",
+  "revision": 1,
+  "sha256": "48d71a57bd35de0ddf9aeb240b1f4ae42a33f34e063f2f1b25261ccb87ae86d9",
+  "reviewed_at": "2026-09-29T17:12:24.922119+00:00"
+}
