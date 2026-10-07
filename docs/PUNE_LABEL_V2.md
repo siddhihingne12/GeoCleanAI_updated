@@ -14,6 +14,26 @@
 
 One page for the whole team: see `docs/TEAM_LABELLING.md`.
 
+## Progress (as of 7 October 2026)
+
+**290 / 960 views reviewed (30.2%).**
+
+| Person | Pune photos | TACO rows | Views reviewed | Status |
+|---|---|---|---|---|
+| A | 1–240 | 1–58 | 50 / 240 | In progress |
+| B | 241–480 | 59–116 | 0 / 240 | Not started |
+| C | 481–720 | 117–174 | 0 / 240 | Not started |
+| D (Siddhi Hingne) | 721–960 | 175–232 | **240 / 240** | ✅ Complete |
+
+Label breakdown so far (290 reviewed views):
+
+| Status | Views | Bounding boxes |
+|---|---|---|
+| Litter | 92 | 339 |
+| Clean (no visible litter) | 198 | 0 |
+| Skipped | 0 | — |
+| **Total reviewed** | **290** | **339** |
+
 ```powershell
 .\.venv\Scripts\python.exe -m training.review_server --data data/pune-label-v2
 ```
