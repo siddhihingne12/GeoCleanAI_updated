@@ -1,4 +1,4 @@
-import type { Analysis, Health, Panorama, PanoramaAnalysis, Place, ViewSpec } from '../types'
+import type { Analysis, DashboardStats, DetectionRecord, GridCell, Health, HotspotData, Panorama, PanoramaAnalysis, Place, ScanJob, ViewSpec } from '../types'
 export class ApiError extends Error {
   constructor(message: string, public code: string, public status: number) { super(message) }
 }
@@ -22,4 +22,11 @@ export const api = {
       throw error
     }
   },
+  // ── Dashboard APIs ──
+  stats: () => request<DashboardStats>('/stats').catch(() => ({ total_detections: 0, total_scans: 0, hotspot_count: 0, high_priority: 0, areas_scanned: 0, areas_total: 0, coverage_pct: 0, severity_distribution: { high: 0, medium: 0, low: 0 }, daily_counts: [] })),
+  hotspots: () => request<{ hotspots: HotspotData[] }>('/hotspots').catch(() => ({ hotspots: [] })),
+  grids: () => request<{ grids: GridCell[] }>('/grids').catch(() => ({ grids: [] })),
+  detections: (limit = 50, severity = '') => request<{ detections: DetectionRecord[] }>(`/detections?limit=${limit}${severity ? `&severity=${severity}` : ''}`).catch(() => ({ detections: [] })),
+  scanJobs: () => request<{ jobs: ScanJob[] }>('/scan-jobs').catch(() => ({ jobs: [] })),
+  modelComparison: () => request<{ models: { model: string; count: number }[] }>('/model-comparison').catch(() => ({ models: [] })),
 }

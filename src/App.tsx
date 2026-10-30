@@ -3,8 +3,11 @@ import { ArrowRight, ArrowUpRight, CircleHelp, Clock3, Crosshair, ExternalLink, 
 import { Button } from './components/ui/button'
 import { InfoDialog } from './components/InfoDialog'
 import { ResultsPanel } from './components/ResultsPanel'
+import { StatsBar } from './components/StatsBar'
+import { HotspotPanel } from './components/HotspotPanel'
+import { ChartsRow } from './components/ChartsRow'
 import { api } from './lib/api'
-import type { PanoramaAnalysis, PanoramaDetection, Health, Panorama, Place } from './types'
+import type { PanoramaAnalysis, PanoramaDetection, Health, Panorama, Place, DashboardStats, HotspotData } from './types'
 
 const MapPanel = lazy(() => import('./components/MapPanel'))
 const StreetViewer = lazy(() => import('./components/StreetViewer').then(m => ({ default: m.StreetViewer })))
@@ -18,6 +21,8 @@ const areas: Place[] = [
 function message(error: unknown) { return error instanceof Error ? error.message : 'Something went wrong. Please retry.' }
 function isAbort(error: unknown) { return error instanceof DOMException && error.name === 'AbortError' }
 
+const defaultStats: DashboardStats = { total_detections: 0, total_scans: 0, hotspot_count: 0, high_priority: 0, areas_scanned: 0, areas_total: 0, coverage_pct: 0, severity_distribution: { high: 0, medium: 0, low: 0 }, daily_counts: [] }
+
 export default function App() {
   const [health, setHealth] = useState<Health | null>(null), [healthError, setHealthError] = useState(false), [infoOpen, setInfoOpen] = useState(false)
   const [query, setQuery] = useState(''), [places, setPlaces] = useState<Place[]>([]), [searching, setSearching] = useState(false), [searchDone, setSearchDone] = useState(false)
@@ -25,11 +30,25 @@ export default function App() {
   const [selected, setSelected] = useState<Panorama | null>(null), [notice, setNotice] = useState('')
   const [analysis, setAnalysis] = useState<PanoramaAnalysis | null>(null), [scanning, setScanning] = useState(false), [scanError, setScanError] = useState(''), [activeDetection, setActiveDetection] = useState<PanoramaDetection | null>(null)
   const [retry, setRetry] = useState(0)
+  const [stats, setStats] = useState<DashboardStats>(defaultStats)
+  const [hotspots, setHotspots] = useState<HotspotData[]>([])
+  const [modelData, setModelData] = useState<{ model: string; count: number }[]>([])
   const viewerColumn = useRef<HTMLDivElement>(null), searchAbort = useRef<AbortController | null>(null), panoAbort = useRef<AbortController | null>(null), scanAbort = useRef<AbortController | null>(null)
   const searchSerial = useRef(0), panoSerial = useRef(0), scanSerial = useRef(0), selectedId = useRef('')
 
   const refreshHealth = useCallback(() => { api.health().then(h => { setHealth(h); setHealthError(false) }).catch(() => setHealthError(true)) }, [])
-  useEffect(() => { refreshHealth(); return () => { searchAbort.current?.abort(); panoAbort.current?.abort(); scanAbort.current?.abort() } }, [refreshHealth])
+  const refreshDashboard = useCallback(() => {
+    api.stats().then(setStats)
+    api.hotspots().then(r => setHotspots(r.hotspots))
+    api.modelComparison().then(r => setModelData(r.models))
+  }, [])
+
+  useEffect(() => {
+    refreshHealth(); refreshDashboard()
+    const interval = setInterval(refreshDashboard, 30000)
+    return () => { clearInterval(interval); searchAbort.current?.abort(); panoAbort.current?.abort(); scanAbort.current?.abort() }
+  }, [refreshHealth, refreshDashboard])
+
   const resetScan = useCallback(() => { scanSerial.current++; scanAbort.current?.abort(); setScanning(false); setAnalysis(null); setActiveDetection(null); setScanError('') }, [])
   const inspectDetection = useCallback((d: PanoramaDetection) => setActiveDetection({ ...d }), [])
   const selectPanorama = useCallback((p: Panorama) => {
@@ -57,6 +76,7 @@ export default function App() {
     finally { if (sequence === panoSerial.current) setLoadingPanos(false) }
   }, [resetScan])
   const onMapPoint = useCallback((lat: number, lng: number) => { void lookup({ id: `${lat},${lng}`, name: 'Selected map point', lat, lng }) }, [lookup])
+  const onHotspotSelect = useCallback((h: HotspotData) => { void lookup({ id: h.id, name: `Hotspot — ${h.detection_count} detections`, lat: h.lat, lng: h.lng }) }, [lookup])
   const submitSearch = async (event: React.FormEvent) => {
     event.preventDefault(); if (query.trim().length < 2) return
     searchAbort.current?.abort(); const controller = new AbortController(); searchAbort.current = controller
@@ -74,7 +94,7 @@ export default function App() {
   const configured = Boolean(health?.checks.model && health?.checks.mapillary && health?.checks.shared_cache)
   const browserToken = Boolean(import.meta.env.VITE_MAPILLARY_CLIENT_TOKEN)
   const supported = Boolean(selected?.is_pano && selected.lat >= 18.40 && selected.lat <= 18.70 && selected.lng >= 73.70 && selected.lng <= 74.05)
-  const unavailable = healthError ? 'Litter detection is unavailable while the service is offline.' : !health ? 'Checking litter detection availability…' : !configured ? 'Litter markings are unavailable until the trained model and service connections are ready.' : !browserToken ? 'Street imagery is unavailable until the image connection is ready.' : selected && !supported ? 'Litter detection is available only for panoramas inside the Pune demo area.' : ''
+  const unavailable = healthError ? 'Detection is unavailable while the service is offline.' : !health ? 'Checking detection availability…' : !configured ? 'Detection unavailable until the trained model and service connections are ready.' : !browserToken ? 'Street imagery unavailable until the image connection is ready.' : selected && !supported ? 'Detection is available only for panoramas inside the Pune demo area.' : ''
 
   useEffect(() => {
     if (!selected?.id || !supported || !configured || !browserToken || healthError) { resetScan(); return }
@@ -85,26 +105,30 @@ export default function App() {
       if (controller.signal.aborted || sequence !== scanSerial.current || selectedId.current !== imageId) return
       if (result.image_id !== imageId) throw new Error('The results did not match this photograph. Please retry.')
       setAnalysis(result); setActiveDetection(result.detections[0] ?? null)
+      // Refresh dashboard after new analysis
+      refreshDashboard()
     }).catch(error => {
       if (!controller.signal.aborted && !isAbort(error) && sequence === scanSerial.current) setScanError(message(error))
     }).finally(() => { if (sequence === scanSerial.current) setScanning(false) })
     return () => { controller.abort(); scanSerial.current++ }
-  }, [selected?.id, supported, configured, browserToken, healthError, health?.model_version, retry, resetScan])
+  }, [selected?.id, supported, configured, browserToken, healthError, health?.model_version, retry, resetScan, refreshDashboard])
 
   const nearest = panoramas[0]
 
   return <div className="app-shell">
     <header className="site-header">
-      <a className="brand" href="/" aria-label="GeoCleanAI home"><span className="brand-symbol"><Leaf size={23} strokeWidth={1.8} /></span><span>GeoClean<span className="brand-ai">AI</span></span><span className="brand-divider"/><span className="brand-caption">STREETS WORTH CARING FOR</span></a>
-      <nav aria-label="Main navigation"><a href="#explore" className="nav-active">Explore Pune</a><button onClick={() => setInfoOpen(true)}>How it works <ArrowUpRight size={13}/></button></nav>
-      <span className="project-badge"><span className="live-dot" /> COLLEGE RESEARCH PROJECT</span>
+      <a className="brand" href="/" aria-label="GeoCleanAI home"><span className="brand-symbol"><Leaf size={23} strokeWidth={1.8} /></span><span>GeoClean<span className="brand-ai">AI</span></span><span className="brand-divider"/><span className="brand-caption">AI-POWERED DUMPING DETECTION</span></a>
+      <nav aria-label="Main navigation"><a href="#explore" className="nav-active">Monitor Pune</a><button onClick={() => setInfoOpen(true)}>How it works <ArrowUpRight size={13}/></button></nav>
+      <span className="project-badge"><span className="live-dot" /> LIVE MONITORING SYSTEM</span>
     </header>
 
     <main id="explore">
       <section className="intro">
-        <div><div className="intro-kicker"><span /> SMALL OBSERVATIONS. CLEANER STREETS.</div><h1>A clearer view of <span>Pune.</span></h1><p>Find a place. Open its street view. Explore automatically marked litter.</p></div>
+        <div><div className="intro-kicker"><span /> AI-POWERED ILLEGAL GARBAGE DETECTION</div><h1>Dumping hotspot <span>monitor.</span></h1><p>Detect waste accumulation. Identify dumping hotspots. Track severity across Pune streets.</p></div>
         <div className="location-stamp"><MapPin size={17}/><div><strong>Pune, Maharashtra</strong><span>18.5204° N &nbsp; 73.8567° E</span></div><span className="india-dot"/></div>
       </section>
+
+      <StatsBar stats={stats} />
 
       <section className="explore-toolbar" aria-label="Location search">
         <div className="search-block"><form onSubmit={submitSearch} className="search-form"><Search size={19}/><input aria-label="Search Pune" placeholder="Search a street, neighbourhood or landmark…" value={query} onChange={e => { setQuery(e.target.value); setSearchDone(false); setPlaces([]); searchSerial.current++; searchAbort.current?.abort(); setSearching(false) }} maxLength={150}/><Button type="submit" disabled={searching || query.trim().length < 2} size="sm">{searching ? <LoaderCircle className="animate-spin"/> : <ArrowRight/>}<span className="sr-only">Search</span></Button></form>
@@ -114,11 +138,11 @@ export default function App() {
         <span className="filter-chip"><SlidersHorizontal size={14}/> Panoramas only</span>
       </section>
 
-      {(healthError || health?.status === 'setup_required' || !browserToken) && <div className="setup-banner" role="status"><CircleHelp size={17}/><p>{healthError ? 'The API is not responding yet. The map is available while the service starts.' : !browserToken || !health?.checks.mapillary ? 'Street imagery is not connected yet. You can still explore the Pune map.' : !health?.checks.model ? 'Street exploration is available. Automatic litter markings will appear when the trained model is ready.' : 'A service connection still needs setup before all features are available.'}</p><button onClick={() => { refreshHealth(); setInfoOpen(true) }}>View status <ArrowUpRight size={13}/></button></div>}
+      {(healthError || health?.status === 'setup_required' || !browserToken) && <div className="setup-banner" role="status"><CircleHelp size={17}/><p>{healthError ? 'The API is not responding yet. The map is available while the service starts.' : !browserToken || !health?.checks.mapillary ? 'Street imagery is not connected yet. You can still explore the Pune map.' : !health?.checks.model ? 'Street exploration is available. AI detection will appear when the model is ready.' : 'A service connection still needs setup before all features are available.'}</p><button onClick={() => { refreshHealth(); setInfoOpen(true) }}>View status <ArrowUpRight size={13}/></button></div>}
       {notice && <div className="notice" role="alert"><CircleHelp size={17}/><span>{notice}</span><button aria-label="Dismiss notice" onClick={() => setNotice('')}><X size={16}/></button></div>}
 
       <div className="workspace">
-        <div className="map-column"><Suspense fallback={<div className="panel panel-loading">Loading map…</div>}><MapPanel panoramas={panoramas} selected={selected} focus={focus} onPoint={onMapPoint} onSelect={selectPanorama}/></Suspense>
+        <div className="map-column"><Suspense fallback={<div className="panel panel-loading">Loading map…</div>}><MapPanel panoramas={panoramas} selected={selected} focus={focus} onPoint={onMapPoint} onSelect={selectPanorama} hotspots={hotspots}/></Suspense>
           {focus && <section className="location-card" aria-label="Selected location">
             <div className="location-card-title"><MapPin size={20}/><div><span>YOUR PLACE</span><h2>{focus.name}</h2><p>{focus.lat.toFixed(5)}° N, {focus.lng.toFixed(5)}° E</p></div></div>
             <p>{loadingPanos ? 'Finding nearby street photographs…' : nearest ? `${panoramas.length} nearby street ${panoramas.length === 1 ? 'view' : 'views'}${truncated ? ' in this subset' : ''}. Nearest photo: ${nearest.distance_m ?? 0} m away.` : lookedUp ? 'No street photographs found nearby. Your place is still marked on the map.' : 'Street photo availability could not be checked.'}</p>
@@ -127,6 +151,7 @@ export default function App() {
           <section className="nearby-panel" aria-label="Available panoramas"><div className="nearby-heading"><span>Nearby street views</span><span>{loadingPanos ? 'Searching…' : lookedUp ? `${panoramas.length} available` : 'Not checked'}</span></div>
             {loadingPanos ? <div className="nearby-empty"><LoaderCircle className="animate-spin" size={18}/> Looking within 500 metres…</div> : panoramas.length ? <><div className="panorama-list">{panoramas.map(p => <button key={p.id} className={selected?.id === p.id ? 'panorama-card active' : 'panorama-card'} onClick={() => selectPanorama(p)}><div className="panorama-thumb">{p.thumbnail_url ? <img src={p.thumbnail_url} alt="Street panorama preview" loading="lazy"/> : <MapPin size={20}/>}</div><div><strong>{p.distance_m ?? 0} m away</strong><span>{p.captured_at ? new Date(p.captured_at).toLocaleDateString('en-IN', { month: 'short', year: 'numeric' }) : 'Date unavailable'}</span></div><ArrowUpRight size={16}/></button>)}</div>{truncated && <p className="small-note">A subset is shown. Select a closer map point to explore more images.</p>}</> : <div className="nearby-empty"><Crosshair size={19}/><span>{lookedUp ? 'No panoramas found within 500 m. Try another point nearby.' : 'Select a map point or an area above to check image coverage.'}</span></div>}
           </section>
+          <HotspotPanel hotspots={hotspots} onSelect={onHotspotSelect} />
         </div>
         <div className="viewer-column" ref={viewerColumn}>
           <Suspense fallback={<div className="panel panel-loading">Loading street viewer…</div>}>
@@ -136,11 +161,12 @@ export default function App() {
         </div>
       </div>
 
+      <ChartsRow stats={stats} modelData={modelData} />
+
       {Boolean(health?.samples.length) && <section className="verified-samples"><h2>Verified presentation locations</h2>{health!.samples.map(p => <Button key={p.id} variant="outline" onClick={() => selectPanorama(p)}>Open photo {p.id}<ArrowUpRight/></Button>)}</section>}
-      <section className="principles"><div><span><RotateIcon/></span><section><h3>Real streets. Real context.</h3><p>Explore existing street photographs, wherever panoramic coverage is available.</p></section></div><div><span><Sparkles size={20}/></span><section><h3>AI lends a second pair of eyes.</h3><p>A model trained for litter offers suggestions for you to inspect.</p></section></div><div><span><Clock3 size={20}/></span><section><h3>A moment in time.</h3><p>Every photo tells a past story. Check its date before drawing conclusions.</p></section></div></section>
+      <section className="principles"><div><span><MapPin size={20}/></span><section><h3>Real streets. Real context.</h3><p>Explore existing street photographs, wherever panoramic coverage is available.</p></section></div><div><span><Sparkles size={20}/></span><section><h3>AI detects waste accumulation.</h3><p>Grounding DINO + SAM 2 find and segment garbage piles in street views.</p></section></div><div><span><Clock3 size={20}/></span><section><h3>Track hotspots over time.</h3><p>Compare observations across dates to identify persistent dumping sites.</p></section></div></section>
     </main>
-    <footer><span><Leaf size={15}/> GeoCleanAI <span className="footer-dot">·</span> Built for a cleaner tomorrow.</span><div><a href="https://www.mapillary.com/" target="_blank" rel="noreferrer">Mapillary <ExternalLink size={11}/></a><a href="https://www.openstreetmap.org/copyright" target="_blank" rel="noreferrer">© OpenStreetMap contributors</a><button onClick={() => setInfoOpen(true)}><ShieldCheck size={13}/> About this prototype</button></div></footer>
+    <footer><span><Leaf size={15}/> GeoCleanAI <span className="footer-dot">·</span> AI-Powered Illegal Dumping Detection</span><div><a href="https://www.mapillary.com/" target="_blank" rel="noreferrer">Mapillary <ExternalLink size={11}/></a><a href="https://www.openstreetmap.org/copyright" target="_blank" rel="noreferrer">© OpenStreetMap contributors</a><button onClick={() => setInfoOpen(true)}><ShieldCheck size={13}/> About this system</button></div></footer>
     <InfoDialog open={infoOpen} onOpenChange={setInfoOpen} health={health}/>
   </div>
 }
-function RotateIcon() { return <MapPin size={20}/> }

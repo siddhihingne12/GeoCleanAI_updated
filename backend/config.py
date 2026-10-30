@@ -23,5 +23,26 @@ def manifest_path() -> Path:
 def mapillary_token() -> str:
     return os.getenv('MAPILLARY_ACCESS_TOKEN', '')
 
+def roboflow_api_key() -> str:
+    return os.getenv('ROBOFLOW_API_KEY', '')
+
+def roboflow_workspace() -> str:
+    return os.getenv('ROBOFLOW_WORKSPACE', 'siddhi-hingne')
+
+def roboflow_workflow_id() -> str:
+    return os.getenv('ROBOFLOW_WORKFLOW_ID', 'garbage_best-t8vwm')
+
+def hf_api_token() -> str:
+    return os.getenv('HF_API_TOKEN', '')
+
 def local_cache_allowed() -> bool:
     return not os.getenv('VERCEL') and os.getenv('ALLOW_LOCAL_CACHE') == '1'
+
+# Grounding DINO prompts for waste detection
+WASTE_PROMPTS = [
+    "large pile of garbage",
+    "roadside waste heap",
+    "illegal garbage dumping",
+    "pile of trash on street",
+    "waste accumulation",
+]

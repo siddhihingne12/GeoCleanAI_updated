@@ -1,5 +1,6 @@
 import hashlib
 import json
+import logging
 import threading
 from functools import lru_cache
 
@@ -12,10 +13,29 @@ from backend.schemas import ViewSpec
 from backend.tiling import TILE, detect_view
 
 _session_lock = threading.Lock()
+logger = logging.getLogger('geoclean')
+
 # Evaluated and rejected models (see docs/BASELINE_V1.md). Never serve these.
 REJECTED_MODEL_SHA256 = {'b7cb1fc9851b674467aeeb0f43224a74f9373434c6b6e46bcaec692463ac57ae'}
 
 def manifest() -> dict:
+    """Return the model manifest.
+
+    When Roboflow is configured, a local ONNX model is not required and a
+    synthetic manifest is returned so the rest of the pipeline (caching,
+    health checks, version strings) works unchanged.
+    """
+    from backend import roboflow_detector
+    if roboflow_detector.is_configured():
+        return {
+            'trained': True,
+            'classes': ['litter'],
+            'format': 'roboflow-workflow',
+            'input_size': 640,
+            'version': 'roboflow-v1',
+            'sha256': hashlib.sha256(b'roboflow-workflow').hexdigest(),
+            'confidence_threshold': 0.35,
+        }
     try:
         data = json.loads(manifest_path().read_text(encoding='utf-8'))
         if not model_path().is_file() or data.get('trained') is not True or data.get('classes') != ['litter'] or data.get('format') != 'yolo26-end2end' or data.get('input_size') != 640 or not data.get('version') or len(data.get('sha256', '')) != 64:
@@ -74,6 +94,8 @@ def decode(output: np.ndarray, image: Image.Image, scale: float, left: int, top:
 
 def view_size(info: dict) -> int:
     """Longest side to render each view at: 640, or larger when the model is used with tiling."""
+    if info.get('format') == 'roboflow-workflow':
+        return 640
     return (info.get('tiling') or {}).get('face_size', TILE)
 
 
@@ -85,6 +107,20 @@ def _run(session, tensor):
 
 
 def detect(image: Image.Image, view: ViewSpec, info: dict):
+    """Run detection on the given image crop.
+
+    Uses Roboflow workflow when configured; otherwise falls back to the
+    local ONNX model.
+    """
+    from backend import roboflow_detector
+
+    # ── Roboflow path ──
+    if info.get('format') == 'roboflow-workflow':
+        threshold = float(info.get('confidence_threshold', .35))
+        logger.info('Using Roboflow workflow for detection')
+        return roboflow_detector.detect(image, view, confidence_threshold=threshold)
+
+    # ── Local ONNX path (original) ──
     session = load_session(str(model_path()), info['sha256'])
     threshold = float(info.get('confidence_threshold', .35))
     tiles = info.get('tiling')
