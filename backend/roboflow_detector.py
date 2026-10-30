@@ -50,7 +50,7 @@ def detect(image: Image.Image, view: ViewSpec, confidence_threshold: float = 0.3
 
     workspace = roboflow_workspace()
     workflow = roboflow_workflow_id()
-    url = f'{ROBOFLOW_API_URL}/{workspace}/{workflow}'
+    url = f'{ROBOFLOW_API_URL}/infer/workflows/{workspace}/{workflow}'
 
     img_b64 = _image_to_base64(image)
 
@@ -65,8 +65,13 @@ def detect(image: Image.Image, view: ViewSpec, confidence_threshold: float = 0.3
         'enable_cache': True,
     }
 
+    headers = {
+        'Authorization': f'Bearer {api_key}',
+        'Content-Type': 'application/json',
+    }
+
     try:
-        response = httpx.post(url, json=payload, timeout=30)
+        response = httpx.post(url, json=payload, headers=headers, timeout=30)
         if response.status_code == 401:
             raise ServiceError('roboflow_auth_failed', 'Roboflow API key is invalid. Check ROBOFLOW_API_KEY.', 502)
         if response.status_code == 429:
@@ -103,8 +108,10 @@ def _parse_workflow_result(
     detections: list[dict] = []
     width, height = image.size
 
-    # result is typically a list with one entry per image
-    if isinstance(result, list):
+    # result is typically a dict with 'outputs', or a list with one entry per image
+    if isinstance(result, dict) and 'outputs' in result:
+        entries = result['outputs']
+    elif isinstance(result, list):
         entries = result
     else:
         entries = [result]
