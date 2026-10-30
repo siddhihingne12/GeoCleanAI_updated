@@ -77,9 +77,16 @@ class Cache:
             self.command('EVAL', "if redis.call('GET',KEYS[1]) == ARGV[1] then return redis.call('DEL',KEYS[1]) else return 0 end", 1, f'geoclean:{key}', json.dumps(token))
 
     @contextmanager
-    def lease(self, key: str, ttl_ms: int = 65_000):
+    def lease(self, key: str, ttl_ms: int = 45_000, wait_seconds: float = 30.0):
         token = uuid4().hex
-        if not self.reserve(key, token, ttl_ms):
+        deadline = time.monotonic() + wait_seconds
+        acquired = False
+        while time.monotonic() <= deadline:
+            if self.reserve(key, token, ttl_ms):
+                acquired = True
+                break
+            time.sleep(0.4)
+        if not acquired:
             raise ServiceError('busy', 'Another scan is running. Please try again shortly.', 429, 3)
         try:
             yield

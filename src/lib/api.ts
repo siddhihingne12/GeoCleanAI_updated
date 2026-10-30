@@ -14,11 +14,24 @@ export const api = {
   panoramas: (lat: number, lng: number, signal?: AbortSignal) => request<{ panoramas: Panorama[]; truncated: boolean }>(`/panoramas?lat=${lat}&lng=${lng}`, { signal }),
   panorama: (id: string, signal?: AbortSignal) => request<Panorama>(`/panoramas/${id}`, { signal }),
   analyze: (imageId: string, view: ViewSpec, signal?: AbortSignal) => request<Analysis>('/analyze', { method: 'POST', headers: { 'Content-Type': 'application/json' }, body: JSON.stringify({ image_id: imageId, view }), signal }),
-  analyzePanorama: async (imageId: string, signal: AbortSignal) => {
+  analyzePanorama: async (imageId: string, signal: AbortSignal, retryCount = 0): Promise<PanoramaAnalysis> => {
     try {
-      return await request<PanoramaAnalysis>('/analyze-panorama', { method: 'POST', headers: { 'Content-Type': 'application/json' }, body: JSON.stringify({ image_id: imageId }), signal: AbortSignal.any([signal, AbortSignal.timeout(60000)]) })
+      return await request<PanoramaAnalysis>('/analyze-panorama', {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify({ image_id: imageId }),
+        signal: AbortSignal.any([signal, AbortSignal.timeout(60000)]),
+      })
     } catch (error) {
-      if (!signal.aborted && error instanceof DOMException && error.name === 'TimeoutError') throw new ApiError('Litter detection took too long. Please retry.', 'analysis_timeout', 504)
+      if (!signal.aborted && error instanceof ApiError && error.code === 'busy' && retryCount < 2) {
+        await new Promise(r => setTimeout(r, 2000))
+        if (!signal.aborted) {
+          return api.analyzePanorama(imageId, signal, retryCount + 1)
+        }
+      }
+      if (!signal.aborted && error instanceof DOMException && error.name === 'TimeoutError') {
+        throw new ApiError('Waste detection took too long. Please retry.', 'analysis_timeout', 504)
+      }
       throw error
     }
   },
